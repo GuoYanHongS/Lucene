@@ -1,4 +1,4 @@
-package com.lucene;
+package com.lghuntfor.lucene.entity;
 
 import java.io.Serializable;
 

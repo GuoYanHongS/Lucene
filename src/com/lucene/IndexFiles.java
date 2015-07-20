@@ -1,5 +1,7 @@
 package com.lucene;
 
+import net.paoding.analysis.analyzer.PaodingAnalyzer;
+
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
@@ -42,7 +44,7 @@ public class IndexFiles {
 //				+ " [-index INDEX_PATH] [-docs DOCS_PATH] [-update]\n\n"
 //				+ "This indexes the documents in DOCS_PATH, creating a Lucene index"
 //				+ "in INDEX_PATH that can be searched with SearchFiles";
-		String indexPath = "lucene/indexes";
+		String indexPath = "lucene/indexes/files";
 		String docsPath = "F:/Desk/Note";
 		boolean create = true;
 //		for (int i = 0; i < args.length; i++) {
@@ -72,6 +74,7 @@ public class IndexFiles {
 
 			Directory dir = FSDirectory.open(new File(indexPath));
 			Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_4_10_4);
+//			Analyzer analyzer = new PaodingAnalyzer();
 			IndexWriterConfig iwc = new IndexWriterConfig(
 					Version.LUCENE_4_10_4, analyzer);
 
